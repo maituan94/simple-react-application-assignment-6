@@ -4,7 +4,7 @@ import mongoose from 'mongoose'
 import cors from 'cors'
 import dotenv from 'dotenv'
 
-import TestRouter from './routes/test/index.js'
+import AuthRouter from './routes/auth.route.js';
 
 dotenv.config();
 
@@ -25,7 +25,7 @@ app.use(cors());
 
 /* This is telling the app to use the AuthRouter and AdminRouter when the url is /auth and /admin
 respectively. */
-app.use('/test', TestRouter)
+app.use('/auth', AuthRouter)
 
 /* This is creating a constant variable called CONNECTION_URL that is a string with the value of the
 connection string to the database. */
